@@ -4,14 +4,16 @@ $(function () {
     let tl = gsap.timeline();
 
     tl.from({}, {})
-    tl.from('#main_visual .slg h2', { y: 140, opacity: 0 })
-    tl.from('#main_visual .slg p', { y: 140, opacity: 0 })
-    tl.from('#main_visual .slg .lnk', { y: 140, opacity: 0 })
+    tl.from('.main_story .title h2', { x: 200, opacity: 0 })
+    tl.from('.main_story .title p', { x: 200, opacity: 0 })
+
+
+
 
     $('#full_wrap').fullpage({
-        fixedElements: '#header , .side_lnk , .to_top',
+        fixedElements: '#header , .side_lnk , .to_top, .footer',
         paddingTop: '80px',
-        anchors: ['visual', 'foryou', 'story', 'banner', 'promotion', 'story', 'event', 'customer'
+        anchors: ['visual', 'foryou', 'story', 'content', 'banner', 'sns',
         ],
         css3: false,
 
@@ -20,26 +22,42 @@ $(function () {
                 $('.to_top').addClass('on')
             }
 
+
+
             $('.side_lnk li').removeClass('on');
             $('.side_lnk li').eq(d - 1).addClass('on');
 
         },
 
         onLeave: function (o, d, dr) {
-            if (d == 1) {
+            if (d == 3) {
                 tl.restart();
+            } else {
+                tl.pause();
             }
             if (d == 1) {
-                $('.to_top').addClass('on')
-            } else {
                 $('.to_top').removeClass('on')
-            }
-            if (d == 2 || d == 4 || d == 6 || d == 7 || d == 8) {
-                $('#header').addClass('on')
             } else {
-                $('#header').removeClass('on')
+                $('.to_top').addClass('on')
             }
+
         },
+
+
+    });
+
+    $('#header .menu_btn').on('click', function () {
+        $(this).toggleClass('on');
+        $('#header .side_lnk').toggleClass('on');
+    })
+
+    $('#header .side_lnk ul>li>a').on('click', function () {
+        $('#header .menu_btn').removeClass('on');
+        $('#header .side_lnk').removeClass('on');
+    })
+    $('#header .side_lnk').on('wheel', function (e) {
+        e.stopPropagation();
+
     });
 
 
@@ -60,11 +78,22 @@ $(function () {
                 disableOnInteraction: false,
             },
 
-            navigation: {
-                nextEl: '.main_story .next',
-                prevEl: '.main_story .prev',
-            },
         });
+
+        const main_sns_slide = new Swiper('.main_sns_slide', {
+            loop: true,
+            slidesPerView: 3.5,
+            spaceBetween: 30,
+        });
+
+        // if (sw) {
+        //     main_sns_slide.autoplay.start();
+        //     $(this).addClass('on');
+        // } else {
+        //     main_sns_slide.autoplay.start();
+        //     $(this).removeClass('on');
+        // }
+        // sw = !sw;
     });
 
 
@@ -81,24 +110,35 @@ $(function () {
         });
     });
 
-    $(function () {
-        $('.to_top').on('click', function () {
-            $('html, body').animate({ scrollTop: 0 })
-        });
-
-        $(window).on('scroll', function () {
-            //스크롤 된 양을 구함.
-            let sct = $(window).scrollTop();
-            console.log(sct)
-
-            if (sct > 400) {
-                $('.to_top').addClass('on')
-            } else {
-                $('.to_top').removeClass('on')
-            }
-        });
-
+    $('.banner_movie').YTPlayer({
+        videoURL: 'https://youtu.be/xehv68hHblw',
+        containment: '.main_banner',
+        showControls: false,
+        autoPlay: true,
+        playOnlyIfVisible: true,
     });
+
+
+    // let sw = true;
+
+    // $(function () {
+    //     $('.to_top').on('click', function () {
+    //         $('html, body').animate({ scrollTop: 0 })
+    //     });
+
+    //     $(window).on('scroll', function () {
+    //         //스크롤 된 양을 구함.
+    //         let sct = $(window).scrollTop();
+    //         console.log(sct)
+
+    //         if (sct > 400) {
+    //             $('.to_top').addClass('on')
+    //         } else {
+    //             $('.to_top').removeClass('on')
+    //         }
+    //     });
+
+    // });
 
     $(function () {
 

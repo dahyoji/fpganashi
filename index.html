@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./lib/css/common.css">
     <link rel="stylesheet" href="./lib/css/fonts.css">
     <link rel="stylesheet" href="./lib/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/css/jquery.mb.YTPlayer.min.css">
     <link rel="stylesheet" href="./lib/css/jquery.fullpage.css">
 
     <link rel="stylesheet" href="./css/layout.css?ver=1.0">
@@ -16,6 +17,7 @@
 
     <script src="./lib/js/jquery-1.12.4.min.js"></script>
     <script src="./lib/js/swiper-bundle.min.js"></script>
+    <script src="./lib/js/jquery.mb.YTPlayer.min.js"></script>
     <script src="./lib/js/jquery.fullpage.js"></script>
     <script src="./lib/js/gsap.min.js"></script>
 
@@ -88,22 +90,23 @@
                     <a href="">My Account</a>
                     <a href="">Search</a>
                     <a href="">Bag </a>
+
                 </div>
-            </div>
         </header>
 
         <aside class="side_lnk">
             <ul>
-                <li class="on"><a href="#visual">visual</a></li>
-                <li><a href="#foryou">store</a></li>
-                <li><a href="#story">story</a></li>
-                <li><a href="#banner">banner</a></li>
-                <li><a href="#content">content</a></li>
-                <li><a href="#customer">customer</a></li>
+                <li class="on"><a href="#visual">01</a></li>
+                <li><a href="#foryou">02</a></li>
+                <li><a href="#story">03</a></li>
+                <li><a href="#content">04</a></li>
+                <li><a href="#banner">05</a></li>
+                <li><a href="#sns">06</a></li>
+
             </ul>
         </aside>
 
-        <section id="main_visual" class="section default">
+        <section class="main_visual section default">
             <div class="slg">
                 <h2>25 SS Styling Guide</h2>
                 <P>휴양지 무드 가득한 가네시</P>
@@ -115,13 +118,14 @@
                     <div class="swiper-slide itm itm02"></div>
                     <div class="swiper-slide itm itm03"></div>
                 </div>
+
+                <span class="scroll">
+                    scroll
+                </span>
             </div>
-            <span class="scroll">
-                scroll
-            </span>
         </section>
 
-        <section id="main_foryou" class="section default">
+        <section class="main_foryou section default">
 
             <div class="title">
                 <h2>A Gife For You</h2>
@@ -176,7 +180,7 @@
 
         </section>
 
-        <section id="main_story" class="section default">
+        <section class="main_story section default">
             <div class="inner">
                 <div class="left">
                     <div class="title">
@@ -212,15 +216,9 @@
 
         </section>
 
-        <section id="main_banner" class="section default">
-            <div class="inner">
-                <div class="title">
-                    <h2>Glowing</h2>
-                </div>
-            </div>
-        </section>
 
-        <section id="main_content" class="section default">
+
+        <section class="main_content section default">
             <div class="title">
                 <h2>IT'S TIME TO SHINE</h2>
                 <p>가네시 주얼리와 함께 눈부시게 빛날 시간</p>
@@ -373,10 +371,67 @@
                 </div>
             </div>
         </section>
+        <section class="main_banner section default">
 
+            <div class="banner_movie player">
+                <span>Glowing</span>
+            </div>
+            <div class="txt">
+                <strong>IT'S TIME TO SHINE.</strong>
+                <p>
+                    가네시 주얼리와 함께 눈부시게 빛날 시간</p>
+            </div>
+        </section>
+        <section class="main_sns section default">
+            <div class="inner">
+                <div class="left">
+                    <div class="title">
+                        <h2>Follow us</h2>
+                        <a href="https://www.instagram.com/ganeshi.official/">
+                            <img src="./images/instagram.svg" alt="">
+                            <span> @ ganeshi.official</span></a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="swiper main_sns_slide">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_sns01.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_sns02.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_sns03.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_sns04.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_sns05.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_sns06.jpg" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
-        <footer id="footer">
+        <footer class="footer section default fp-auto-height">
             <div class="inner">
                 <ul class="sns">
                     <li><a href="" class="tt">Legal Notice</a>
@@ -423,9 +478,9 @@
             </div>
         </footer>
 
-        <button class="to_top">
+        <a href="#visual" class="to_top">
             <img src="./images/chevron-up.svg" alt="">
-        </button>
+        </a>
     </div>
 
 </body>
