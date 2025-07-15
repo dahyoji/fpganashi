@@ -253,6 +253,16 @@
     text-indent: -60px;
 }
 
+@media (max-width:768px) {
+    .side_lnk {
+        /*  */
+        display: none;
+        right: 16px;
+    }
+
+
+}
+
 .main_visual {
     position: relative;
 }
@@ -578,7 +588,35 @@
     min-width: 0;
 }
 
+/* 반응형 수정해야함 */
 
+@media (max-width:768px) {
+    .main_sns {
+        background: #fbfbf6;
+    }
+
+    .main_sns a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .main_sns .inner {
+        display: flex;
+    }
+
+    .main_sns .inner .left {
+        flex: 1;
+        padding-top: 56px;
+    }
+
+    .main_sns .inner .right {
+        flex: 4;
+        min-width: 0;
+    }
+
+}
 
 
 .footer {

@@ -82,8 +82,19 @@ $(function () {
 
         const main_sns_slide = new Swiper('.main_sns_slide', {
             loop: true,
-            slidesPerView: 3.5,
+            slidesPerView: 1.5,
             spaceBetween: 30,
+            breakpoints: {
+
+                769: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 30,
+                },
+                1025: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 30,
+                },
+            },
         });
 
         // if (sw) {
