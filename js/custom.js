@@ -16,6 +16,7 @@ $(function () {
         anchors: ['visual', 'foryou', 'story', 'content', 'banner', 'sns',
         ],
         css3: false,
+        responsiveWidth: 768,
 
         afterLoad: function (o, d, dr) {
             if (d !== 1) {
