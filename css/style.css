@@ -431,7 +431,50 @@
 }
 
 
+@media (max-width: 768px) {
+   .section {
+        height: auto !important;
+        min-height: auto !important;
+    }
 
+  
+    .main_story .inner {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+ 
+    .main_story .right {
+        order: 1;
+        width: 100%;
+    }
+
+    .main_story .left {
+        order: 2;
+        width: 100%;
+    }
+
+    .main_story {
+        padding: 80px 0;
+    }
+
+    .main_story .main_story_slide .itm img {
+        height: 260px;
+    }
+
+    
+    .main_story .title br {
+        display: none;
+    }
+
+   
+    .main_story .title p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+    
 
 .main_content .tab_menu {
     display: flex;
@@ -570,7 +613,26 @@
     color: #fff;
     font-size: 16px;
 }
+@media (max-width: 768px) {
 
+    .main_banner .txt {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .main_banner .txt strong {
+        font-size: 18px;
+    }
+
+    .main_banner .txt p {
+        font-size: 14px;
+    }
+
+    /* 모바일에서 과도한 크롭 방지 */
+    .main_banner .banner_movie video {
+        object-position: center center;
+    }
+}
 .main_sns {
     background: #fbfbf6;
 }
